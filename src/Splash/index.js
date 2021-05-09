@@ -4,7 +4,7 @@ import styles from './style';
 
 
 
-export default class SignIn extends Component {
+export default class Splash extends Component {
     constructor(props) {
         super(props);
 
@@ -17,7 +17,10 @@ export default class SignIn extends Component {
                     navigation.navigate('SignUp')
                 }
             >
-
+                <Image
+                    style={styles.stretch}
+                    source={require('../img/logo.png')}
+                />
                 <Button
                     style={styles.button}
                     title="SignUp"
