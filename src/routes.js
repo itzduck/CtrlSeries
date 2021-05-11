@@ -5,15 +5,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-import Splash from './Splash';
+import Intro from './Intro';
 const Stack = createStackNavigator();
 
 export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Splash">
-        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Intro">
+        <Stack.Screen name="Intro" component={Intro} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
         </Stack.Navigator>
