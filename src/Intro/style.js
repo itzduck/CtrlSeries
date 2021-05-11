@@ -27,18 +27,24 @@ export default StyleSheet.create({
     margin: 20,
   },
   text:{
+    // flex:1,
     fontSize : 25,
     color: '#fffff0',
     textAlign: "center",
   },
   containerButton:{
-    width: '50%',
-    borderRadius: 80,
-    backgroundColor:"#fee",
+    flexDirection:'column',
     justifyContent: 'center',
-    // alignItems: 'center'
+    alignItems: 'center'
   },
   button:{
-
-  }
+    fontSize:80,
+    height:50,
+    width:200,
+    color:'#fff',
+    borderRadius:5,
+  },
+  textLogar:{
+    color:'#fff'
+  },
 });

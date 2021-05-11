@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, Text, ImageBackground, Button, Alert } from "react-native";
+import { View, Text, ImageBackground, Alert } from "react-native";
+import { Button } from "react-native-elements";
 import styles from "./style";
 
 const image = { uri: "../img/logo-og.png" };
@@ -18,27 +19,27 @@ export default class Intro extends Component {
         >
           <View style={styles.body}>
             <View style={styles.boxShadow}>
-              <View style={{ flex: 1 }}></View>
-              <View style={{ flex: 1 }}>
+              <View style={{ flex: 2}}></View>
+              <View style={{ flex: 1}}>
                 <Text style={styles.text}>Acompanhe suas series</Text>
                 <Text style={styles.text}>Saiba mais sobre datas</Text>
                 <Text style={styles.text}>de lançamento</Text>
               </View>
-              <View style={{ flex: 1 }}>
+              <View style={{ flex: 2}}>
                 <View style={styles.containerButton}>
                   <Button
-                    style={styles.button}
+                    buttonStyle={styles.button}
+                    type="solid"
                     onPress={() => {
                       Alert.alert("Me clicou");
                     }}
                     title="Vamos lá"
-                    color="#01579B"
                     accessibilityLabel="Learn more about this purple button"
                   />
-                </View>
-                <Text style={styles.text}>
+                <Text style={styles.textLogar}>
                   Possue conta?<Text>Logar</Text>
                 </Text>
+                </View>
               </View>
             </View>
           </View>
