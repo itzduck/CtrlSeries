@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Intro from './Intro';
+import ListSeries from './ListSeries';
 const Stack = createStackNavigator();
 
 export default class App extends Component {
@@ -14,6 +15,7 @@ export default class App extends Component {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Intro">
         <Stack.Screen name="Intro" component={Intro} />
+        <Stack.Screen name="ListSeries" component={ListSeries} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
         </Stack.Navigator>
