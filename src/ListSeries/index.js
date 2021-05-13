@@ -5,6 +5,7 @@ import { Card, ListItem, Button, Icon, Avatar } from "react-native-elements";
 import style from "./style";
 import styles from "./style";
 import SeriesDb from "./db.js";
+import { Alert } from "react-native";
 
 
 let numberGrid = 3
@@ -23,9 +24,12 @@ export default class ListSeries extends Component {
 
   renderItem = ({ item }) => (
     <View>
-      <Image source={{ uri: item.src }} style={styles.itemImage} />
+      <Image onPress={()=>Alert.alert('Nome da Série ' +item.name)} source={{ uri: item.src }} style={styles.itemImage} />
     </View>
   );
+
+
+
   render() {
     const { navigation } = this.props;
     const { search } = this.state;
