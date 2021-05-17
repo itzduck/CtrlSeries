@@ -18,13 +18,17 @@ export default class ListSeries extends Component {
       date: false,
     };
   }
-  componentDidMount() {
-    useGet.get("").then((date) => {
-      this.setState({
-        date,
-      });
-      console.log("chegou no setState");
-      console.log(this.state.date.data.data);
+  async componentDidMount(){
+    // useGet.get("").then((date) => {
+    //   this.setState({
+    //     date,
+    //   });
+    //   console.log("chegou no setState");
+    //   console.log(this.state.date.data.data);
+    // });
+    const d = await useGet;
+    this.setState({
+      date: d,
     });
   }
   updateSearch = (search) => {
@@ -48,9 +52,10 @@ export default class ListSeries extends Component {
     <View>
       {/* <Text>{item.attributes.titles.en_jp}</Text> */}
       {/* <Text>{JSON.stringify(item)}</Text> */}
+      {/* <Text>{item }</Text> */}
       <Image
-        onPress={() => {}}
-        source={{ uri: item.attributes.posterImage.tiny }}
+        onPress={() => Alert.alert("Serie: "+ item.name)}
+        source={{ uri: "https://image.tmdb.org/t/p/w300"+item.backdrop_path }}
         style={styles.itemImage}
         posterImage
       />
@@ -78,12 +83,12 @@ export default class ListSeries extends Component {
             value={search}
           />
         </View>
-
+        {/* {this.state.date && <Text>{JSON.stringify("https://image.tmdb.org/t/p/w500"+this.state.date.results[0].backdrop_path)}</Text>} */}
         {this.state.date && (
           <View style={styles.containerImage}>
             <FlatList
               keyExtractor={this.keyExtractor}
-              data={this.state.date.data.data}
+              data={this.state.date.results}
               numColumns={numberGrid}
               renderItem={this.renderItem}
             />

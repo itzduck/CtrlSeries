@@ -42,7 +42,21 @@ const useGet2 = (url) => {
     })
   return data;
 };
-const useGet = axios.create({
-  baseURL: "https://kitsu.io/api/edge/anime?page[limit]=18&page[offset]=0",
+// const useGet = axios.create({
+//   baseURL: "https://kitsu.io/api/edge/anime?page[limit]=18&page[offset]=0",
+// });
+const baseURL = 'https://api.themoviedb.org/3'
+const api_key = 'api_key=41a712c8ffaffb8c3872a1ea3851194c';
+const page= '&page=1'
+const options = {
+  method: 'GET',
+  url: `${baseURL}/tv/airing_today?${api_key}${page}`,
+};
+
+const useGet = axios.request(options).then(function (response) {
+  console.log(response)
+	return response.data;
+}).catch(function (error) {
+	console.error(error);
 });
 export default useGet;
