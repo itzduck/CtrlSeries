@@ -55,7 +55,7 @@ export default class ListSeries extends Component {
       {/* <Text>{item }</Text> */}
       <Image
         onPress={() => Alert.alert("Serie: "+ item.name)}
-        source={{ uri: "https://image.tmdb.org/t/p/w300"+item.backdrop_path }}
+        source={{ uri: "https://image.tmdb.org/t/p/w300"+item.poster_path }}
         style={styles.itemImage}
         posterImage
       />
